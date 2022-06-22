@@ -14,7 +14,7 @@ class Activity {
   List<Tariff>? tariffs;
   String? createdDate;
   String? updatedDate;
-
+  String? description;
   Activity(
       {this.id,
       this.availableDates,
@@ -28,7 +28,8 @@ class Activity {
       this.skiPassRequired,
       this.tariffs,
       this.createdDate,
-      this.updatedDate});
+      this.updatedDate,
+      this.description});
 
   Activity.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -38,6 +39,8 @@ class Activity {
     nameEn = json['nameEn'];
     imageUrl = json['imageUrl'];
     code = json['code'];
+    description = json['description'];
+
     enabled = json['enabled'];
     dateRequired = json['dateRequired'];
     skiPassRequired = json['skiPassRequired'];
@@ -68,7 +71,7 @@ class Activity {
     }
     data['createdDate'] = createdDate;
     data['updatedDate'] = updatedDate;
+    data['description'] = description;
     return data;
   }
-  
 }
